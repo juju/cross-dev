@@ -1,0 +1,15 @@
+images:
+  # LTS
+  ubuntu-22.04-go-1.21-dqlite:
+    dockerfile: Dockerfile
+    context: context
+    registry_paths:
+      - ghcr.io/juju/cross-dev
+    tags:
+      - ubuntu-22.04-go-1.21-dqlite
+    platforms:
+      - linux/arm64
+      - linux/amd64
+    build_args:
+      - "BASE_IMAGE=public.ecr.aws/ubuntu/ubuntu:22.04"
+      - "GOVERSION=1.21"
