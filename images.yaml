@@ -6,9 +6,33 @@ images:
     registry_paths:
       - ghcr.io/juju/cross-dev
     tags:
-      - juju-3.6
+      - juju3.6-go1.23-dqlite1.16.7
     platforms:
       - linux/amd64
     build_args:
       - "BASE_IMAGE=public.ecr.aws/ubuntu/ubuntu:24.04"
-      - "GOVERSION=1.22"
+      - "GOVERSION=1.23"
+      - "LIBDQLITE_VERSION=v1.16.7"
+      - "LIBLZ4_VERSION=applied/ubuntu/noble"
+      - "LIBSQLITE3_VERSION=applied/ubuntu/noble"
+      - "LIBUV_VERSION=applied/ubuntu/noble"
+      - "LIBNSL_VERSION=v2.0.0"
+      - "LIBTIRPC_VERSION=applied/ubuntu/noble"
+  juju-4.0:
+    dockerfile: Dockerfile
+    context: context
+    registry_paths:
+      - ghcr.io/juju/cross-dev
+    tags:
+      - juju4.0-go1.23-dqlite1.18.1
+    platforms:
+      - linux/amd64
+    build_args:
+      - "BASE_IMAGE=public.ecr.aws/ubuntu/ubuntu:24.04"
+      - "GOVERSION=1.23"
+      - "LIBDQLITE_VERSION=v1.18.1"
+      - "LIBLZ4_VERSION=applied/ubuntu/noble"
+      - "LIBSQLITE3_VERSION=applied/ubuntu/noble"
+      - "LIBUV_VERSION=applied/ubuntu/noble"
+      - "LIBNSL_VERSION=v2.0.0"
+      - "LIBTIRPC_VERSION=applied/ubuntu/noble"
